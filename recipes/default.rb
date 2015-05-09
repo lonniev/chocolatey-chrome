@@ -17,4 +17,10 @@
 # limitations under the License.
 #
 
-chocolatey 'google-chrome-x64'
+justDoItOptions = { "y" => nil, "f" => nil }
+  
+chocolatey 'google-chrome-x64' do
+  action :install
+  options justDoItOptions
+  ignore_failure true
+end
