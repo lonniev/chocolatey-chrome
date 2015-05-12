@@ -22,5 +22,11 @@ justDoItOptions = { "y" => nil, "f" => nil }
 chocolatey 'google-chrome-x64' do
   action :install
   options justDoItOptions
-  ignore_failure true
+  not_if { ::File.exists? '/Program Files (x86)/Google/Chrome/Application/chrome.exe' }
+end
+
+chocolatey 'google-chrome-x64' do
+  action :upgrade
+  options justDoItOptions
+  only_if { ::File.exists? '/Program Files (x86)/Google/Chrome/Application/chrome.exe' }
 end
