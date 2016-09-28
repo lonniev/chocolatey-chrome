@@ -18,8 +18,8 @@
 #
 
 justDoItOptions = { "y" => nil, "f" => nil }
-  
-chocolatey 'google-chrome-x64' do
+
+chocolatey 'googlechrome' do
   action :install
   options justDoItOptions
   not_if { Pathname( '/Program Files (x86)/Google/Chrome/Application/chrome.exe' ).exist? }
